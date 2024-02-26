@@ -10,9 +10,12 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -42,6 +45,7 @@ public HashMap<String, Integer> eterem = new HashMap<>();
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         tabla = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -74,9 +78,37 @@ public HashMap<String, Integer> eterem = new HashMap<>();
         asztal = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         kivAsztArea = new javax.swing.JTextArea();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jPanel14 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jPanel13 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
+        jTextField3 = new javax.swing.JTextField();
+        jPanel15 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
+        jButton4 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        jPanel12 = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         fajbaIr = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Étterem");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Étlap elemei")));
 
@@ -97,7 +129,7 @@ public HashMap<String, Integer> eterem = new HashMap<>();
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -180,7 +212,7 @@ public HashMap<String, Integer> eterem = new HashMap<>();
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 81, Short.MAX_VALUE)))
+                        .addGap(0, 169, Short.MAX_VALUE)))
                 .addGap(48, 48, 48))
         );
         jPanel3Layout.setVerticalGroup(
@@ -350,7 +382,7 @@ public HashMap<String, Integer> eterem = new HashMap<>();
                 .addContainerGap()
                 .addComponent(asztal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addGap(18, 18, 18))
         );
 
@@ -365,7 +397,7 @@ public HashMap<String, Integer> eterem = new HashMap<>();
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -396,6 +428,257 @@ public HashMap<String, Integer> eterem = new HashMap<>();
 
         tabla.addTab("Redelés", jPanel2);
 
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("Piros asztal:"));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Babgulyás  \t                700Ft\nRántot sajt  \t                900Ft");
+        jScrollPane6.setViewportView(jTextArea1);
+
+        jButton1.setText("Összegez");
+
+        jTextField1.setEditable(false);
+        jTextField1.setText("1600Ft");
+        jTextField1.setMinimumSize(new java.awt.Dimension(100, 22));
+        jTextField1.setPreferredSize(new java.awt.Dimension(90, 22));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
+        );
+
+        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder("Zöld asztal:"));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane7.setViewportView(jTextArea2);
+
+        jButton2.setText("Összegez");
+
+        jTextField2.setEditable(false);
+        jTextField2.setMinimumSize(new java.awt.Dimension(100, 22));
+        jTextField2.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
+                .addContainerGap())
+        );
+
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder("Kék asztal:"));
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane8.setViewportView(jTextArea4);
+
+        jButton3.setText("Összegez");
+
+        jTextField3.setEditable(false);
+        jTextField3.setMinimumSize(new java.awt.Dimension(100, 22));
+        jTextField3.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(51, 51, 51))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
+        );
+
+        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder("Fehér asztal:"));
+
+        jTextArea5.setColumns(20);
+        jTextArea5.setRows(5);
+        jScrollPane9.setViewportView(jTextArea5);
+
+        jButton4.setText("Összegez");
+
+        jTextField4.setEditable(false);
+        jTextField4.setMinimumSize(new java.awt.Dimension(100, 22));
+        jTextField4.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
+        );
+
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Oszesítet számla"));
+
+        jTextArea6.setColumns(20);
+        jTextArea6.setRows(5);
+        jTextArea6.setText("Piros asztal:\n=================\nBabgulyás              700Ft\nRántott sajt             900Ft\n\n--------------------------\nÖsszesen:             1600Ft");
+        jScrollPane10.setViewportView(jTextArea6);
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+        );
+
+        jButton6.setText("Számlákat lekér");
+
+        jButton7.setText("Számlát lekér");
+
+        jButton8.setText("Nyugtaz");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jButton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton8)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
+            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel10Layout.createSequentialGroup()
+                    .addGap(270, 270, 270)
+                    .addComponent(jButton6)
+                    .addContainerGap(272, Short.MAX_VALUE)))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton7)
+                            .addComponent(jButton8))))
+                .addContainerGap(7, Short.MAX_VALUE))
+            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel10Layout.createSequentialGroup()
+                    .addGap(236, 236, 236)
+                    .addComponent(jButton6)
+                    .addContainerGap(236, Short.MAX_VALUE)))
+        );
+
+        tabla.addTab("Számlák", jPanel10);
+
         fajbaIr.setText("Kiír fájba");
         fajbaIr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -413,69 +696,109 @@ public HashMap<String, Integer> eterem = new HashMap<>();
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(fajbaIr)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(tabla)
-                        .addContainerGap())))
+                    .addComponent(tabla)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(fajbaIr)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tabla, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(tabla, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void etelfelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etelfelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_etelfelActionPerformed
-
-    private void BeolvasFajbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeolvasFajbolActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BeolvasFajbolActionPerformed
-
-    private void FelveszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FelveszActionPerformed
-     DefaultListModel<String> listModel = new DefaultListModel<>();
-     for (String existingItem : eterem.keySet()) {
-    listModel.addElement(existingItem);
-}
-     
-     String text = etelfel.getText(); 
-     int ertek = (int) arfel.getValue(); 
-     eterem.put(text, ertek);
-     EtlapText.append(text + "|" + ertek + "\n");
-     TextEtlap.append(text + "|" + ertek + "\n");
-     listModel.addElement(text + "\n");
-     valasztetel.setModel(listModel);      
-    }//GEN-LAST:event_FelveszActionPerformed
-
     private void fajbaIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fajbaIrActionPerformed
-        if (tabla.getSelectedIndex() == 0) {
-            String filePath = "etlap.txt";
+       if (tabla.getSelectedIndex() == 0) {
+    String filePath = "Etelek.txt";
 
-        // Write the HashMap to the file
-        try {
-            FileWriter fileWriter = new FileWriter(filePath);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+    // Write the HashMap to the file
+    try {
+        FileWriter fileWriter = new FileWriter(filePath);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-            for (Map.Entry<String, Integer> entry : eterem.entrySet()) {
-                bufferedWriter.write(entry.getKey() + "|" + entry.getValue());
-                bufferedWriter.newLine();
-            }
-
-            bufferedWriter.close();
-            JOptionPane.showMessageDialog(null, "Fájl sikiresen létrejött");
-        } catch (IOException e) {
-            e.printStackTrace();
+        for (Map.Entry<String, Integer> entry : eterem.entrySet()) {
+            String data1 = entry.getKey();
+            int data2 = entry.getValue();
+            String line = data1 + "|" + data2;
+            bufferedWriter.write(line);
+            bufferedWriter.newLine();
         }
-        }else{
-             
-        }
+
+        bufferedWriter.close();
+        JOptionPane.showMessageDialog(null, "Fájl sikeresen létrejött");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
     }//GEN-LAST:event_fajbaIrActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void Asztalhoz_adActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Asztalhoz_adActionPerformed
+       int i = 0;
+ButtonModel selectedRadioButtonModel = buttonGroup1.getSelection();
+if (selectedRadioButtonModel != null) {
+    JRadioButton selectedRadioButton = null;
+    Enumeration<AbstractButton> buttons = buttonGroup1.getElements();
+    while (buttons.hasMoreElements()) {
+        AbstractButton button = buttons.nextElement();
+        if (button.getModel() == selectedRadioButtonModel) {
+            selectedRadioButton = (JRadioButton) button;
+            break;
+        }
+    }
+    // Now you can directly check if selectedRadioButton is not null
+    if (selectedRadioButton != null) {
+        if (selectedRadioButton == jRadioButton1) {
+            etelek1.add(valasztetel.getSelectedValue());
+            i = 0; // Reset i before the loop
+            while (i < etelek1.size()) {
+                kivAsztArea.append(etelek1.get(i) + "\n");
+                i++;
+            }
+        } else if (selectedRadioButton == jRadioButton2) {
+            etelek2.add(valasztetel.getSelectedValue());
+            i = 0; // Reset i before the loop
+            while (i < etelek2.size()) {
+                kivAsztArea.append(etelek2.get(i) + "\n");
+                i++;
+            }
+        } else if (selectedRadioButton == jRadioButton3) {
+            etelek3.add(valasztetel.getSelectedValue());
+            i = 0; // Reset i before the loop
+            while (i < etelek3.size()) {
+                kivAsztArea.append(etelek3.get(i) + "\n");
+                i++;
+            }
+        } else if (selectedRadioButton == jRadioButton4) {
+            etelek4.add(valasztetel.getSelectedValue());
+            i = 0; // Reset i before the loop
+            while (i < etelek4.size()) {
+                kivAsztArea.append(etelek4.get(i) + "\n");
+                i++;
+            }
+        }
+    }
+}
+
+    }//GEN-LAST:event_Asztalhoz_adActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        asztal.setText(jRadioButton4.getText());
+        kivAsztArea.setText("");
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        asztal.setText(jRadioButton3.getText());
+        kivAsztArea.setText("");
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         asztal.setText(jRadioButton2.getText());
@@ -483,50 +806,32 @@ public HashMap<String, Integer> eterem = new HashMap<>();
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-       asztal.setText(jRadioButton1.getText());
-       kivAsztArea.setText("");
+        asztal.setText(jRadioButton1.getText());
+        kivAsztArea.setText("");
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        asztal.setText(jRadioButton3.getText());
-        kivAsztArea.setText("");
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    private void BeolvasFajbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeolvasFajbolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BeolvasFajbolActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-         asztal.setText(jRadioButton4.getText());
-         kivAsztArea.setText("");
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    private void FelveszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FelveszActionPerformed
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (String existingItem : eterem.keySet()) {
+            listModel.addElement(existingItem);
+        }
 
-    private void Asztalhoz_adActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Asztalhoz_adActionPerformed
-       int i = 0;
-    
-       
-       if(selectedRadiobutton == jRadioButton1){
-        etelek1.add(valasztetel.getSelectedValue());
-       while (i < etelek1.size()){
-          kivAsztArea.append(etelek1.get(i) + "\n");
-          i++;
-       }
-       } else if(selectedRadiobutton == jRadioButton2){
-              etelek2.add(valasztetel.getSelectedValue());
-              while (i < etelek2.size()){
-              kivAsztArea.append(etelek2.get(i) + "\n");
-              i++;  
-              }
-              } else if(selectedRadiobutton == jRadioButton3){
-              etelek3.add(valasztetel.getSelectedValue());
-              while (i < etelek2.size()){
-              kivAsztArea.append(etelek2.get(i) + "\n");
-              i++;  
-              }
-              }else if(selectedRadiobutton == jRadioButton4){
-              etelek4.add(valasztetel.getSelectedValue());
-              while (i < etelek4.size()){
-              kivAsztArea.append(etelek4.get(i) + "\n");
-              i++; 
-              }
-              }
-    }//GEN-LAST:event_Asztalhoz_adActionPerformed
+        String text = etelfel.getText();
+        int ertek = (int) arfel.getValue();
+        eterem.put(text, ertek);
+        EtlapText.append(text + "|" + ertek + "\n");
+        TextEtlap.append(text + "|" + ertek + "\n");
+        listModel.addElement(text + "\n");
+        valasztetel.setModel(listModel);
+    }//GEN-LAST:event_FelveszActionPerformed
+
+    private void etelfelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etelfelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_etelfelActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -573,9 +878,22 @@ public HashMap<String, Integer> eterem = new HashMap<>();
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField etelfel;
     private javax.swing.JButton fajbaIr;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -589,11 +907,26 @@ public HashMap<String, Integer> eterem = new HashMap<>();
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea6;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextArea kivAsztArea;
     private javax.swing.JTabbedPane tabla;
     private javax.swing.JList<String> valasztetel;
